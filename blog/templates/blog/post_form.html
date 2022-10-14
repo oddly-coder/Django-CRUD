@@ -1,0 +1,24 @@
+{% extends "blog/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="m-auto">
+        <div class="postform-card">
+            <div class="card">
+                <div class="card-header">Blog post</div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            {{ form| crispy }}
+                        </fieldset>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-primary btn-outline-light" type="submit">
+                                Post
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

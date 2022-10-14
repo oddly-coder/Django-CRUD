@@ -1,0 +1,34 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+    <div class="m-auto">
+        <div class="row">
+            <div class="post-card m-auto">
+                <div class="card">
+                    <div class="card-header text-uppercase">
+                        {{object.title}}
+                    </div>
+                    <div class="card-body">
+                        {{object.content}}
+                        <div class="card-footer mt-3">
+                            <div class="flex-container">
+                                <div class="blog-author">
+                                    {{object.author}}
+                                </div>
+                                <div class="blog-date">
+                                    <small class="text-muted">
+                                        {{object.date_posted}}
+                                    </small>
+                                </div>
+                          
+                            </div>
+                        </div>
+                        {% if user == object.author %}
+                        <a class="btn btn-primary btn-sm" href="{% url 'post_update' object.id %}">Update</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'post_delete' object.id %}">Delete</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

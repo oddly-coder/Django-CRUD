@@ -1,0 +1,14 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+    <div class="m-auto">
+        <div class="registerform-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="alert alert-primary">
+                        You are currently logged out <a href="{% url 'login' %}" class="mx-2">log in</a>again
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,43 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--bootstrap-->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css'%}"/>
+    <title>Document</title>
+</head>
+<body >
+    <nav class="navbar bg-light">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="{% url 'blog-home' %}">DJANGO CRUD</a>
+            <div class="display-flex">
+                {% if user.is_authenticated%}
+                    <a class="me-2 link" href="{% url 'new_post' %}" >Create Post</a>
+                    <a class="me-2 link" href="{% url 'logout' %}" >Logout</a>
+                {% else %}
+                    <a class="me-2 link" href="{% url 'register' %}">Register</a>
+                    <a class="me-2 link" href="{% url 'login' %}" >Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="content mt-3">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>

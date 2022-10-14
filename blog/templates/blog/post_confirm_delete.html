@@ -1,0 +1,21 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="m-auto">
+            <div class="reg-card">
+                <div class="card">
+                    <div class="card-header">Are you sure you what to delete?{{object.title}}</div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-outline-danger">Yes delete</button>
+                                <a href="{% url 'post_detail' object.id %}" class="btn btn-outline-secondary">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

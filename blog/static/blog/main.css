@@ -1,0 +1,46 @@
+.link{
+    text-decoration: none;
+}
+
+
+
+.dark-overlay{
+    background-color: black 50%;
+}
+
+.reg-card{
+    max-width: 400px;
+    min-width: 200px;
+    margin: auto;
+}
+.profile-img{
+    width:50px;
+    height:50px;
+    border-radius: 30px;
+}
+
+.article-img{
+    width:40px;
+    height:40px;
+    border-radius: 15px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-card{
+    width: 300px;
+    margin: 10px;
+}
+
+.postform-card{
+    width: 300px;
+    margin: auto;
+}
+.registerform-card{
+    width: 400px;
+    margin: auto;
+}
